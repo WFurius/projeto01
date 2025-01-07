@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --strok-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(rgba(255, 255, 255, 0.05));
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --icon-button: url(./assets/moon-stars.svg);
+}
+
+
+.light {
+  --text-color: black;
+  --bg-url: url(assets/bg-mobile-light.jpg);
+  --strok-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.05);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --icon-button: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+
+  /*background: color/image,repeat,postiion/size */
+
+  background: var(--bg-url) no-repeat top center/cover;
+  /* Aqui em cima foi adicionado o no-repeat para não repetir a imagem, o top center para deixar a imagem em cima no meio, e o cover para preencher a tela*/
+}
+
+body * {
+  font-family: "Inter", serif;
+  color: var(--text-color);
+}
+
+#user {
+  font-family: "Teko", serif;
+  color: var(--text-color);
+  font-size: 24px;
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/* profile */
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* switch */
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto; /* neste caso é utilizado o margin para centralizar pq é um display:block; */
+}
+
+#switch button{
+  height: 32px;
+  width: 32px;
+  background: white var(--icon-button) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute; /*cria a sobreposição */
+  left: 0;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--strok-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+
+/*display: flex; organizou para tudo caber no mesmo espaço*/
+/*flex-direction: column;  organizou para deixar em coluna novamente */
+/*gap: 8px;  gap é utlizado para colocar um espaçamento de um texto ao outro*/
+
+ul {
+  list-style: none; /* removeu as bolinhas da lista desordenada */
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center; /* alinhou o texto com o centro da caixa(Mas não colocando no meio da caixa*/
+  justify-content: center; /* alinhou o texto colocando no meio da caixa(border) */
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--strok-color);
+  border-radius: 8px; /* arredondamento de bordas */
+
+  backdrop-filter: blur(4px); /* adiciona um bluer na caixa */
+  -webkit-backdrop-filter: blur(4px); /* webkit ele é adiocionado somente depois do backdrop, ele é um suporte para outros navegadores */
+  
+  text-decoration: none; /* ele remove o efeito do texto, como o sublinhado */
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+/* pseudo selector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* #social-links */
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+
+  transition: background 0.4s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--hightlight-color);
+  padding: 16px;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+
+  padding: 24px 0;
+}
