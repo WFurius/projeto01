@@ -14,7 +14,6 @@
   --icon-button: url(./assets/moon-stars.svg);
 }
 
-
 .light {
   --text-color: black;
   --bg-url: url(assets/bg-mobile-light.jpg);
@@ -51,7 +50,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
@@ -80,7 +80,7 @@ body * {
   margin: 4px auto; /* neste caso é utilizado o margin para centralizar pq é um display:block; */
 }
 
-#switch button{
+#switch button {
   height: 32px;
   width: 32px;
   background: white var(--icon-button) no-repeat center;
@@ -138,8 +138,10 @@ ul li a {
   border-radius: 8px; /* arredondamento de bordas */
 
   backdrop-filter: blur(4px); /* adiciona um bluer na caixa */
-  -webkit-backdrop-filter: blur(4px); /* webkit ele é adiocionado somente depois do backdrop, ele é um suporte para outros navegadores */
-  
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* webkit ele é adiocionado somente depois do backdrop, ele é um suporte para outros navegadores */
+
   text-decoration: none; /* ele remove o efeito do texto, como o sublinhado */
   font-weight: 500;
 
